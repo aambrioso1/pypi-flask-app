@@ -1,2 +1,2 @@
 # pypi-flask-app
-This is the app workout out as I followed Michael Kennedy's Flask Web App Course
+This is the app I worked out as I followed Michael Kennedy's Flask web app course.
