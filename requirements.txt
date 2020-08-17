@@ -1,6 +1,6 @@
 werkzeug
 flask
-sqalchemy
+sqlalchemy
 
 progressbar2
 python-dateutil
