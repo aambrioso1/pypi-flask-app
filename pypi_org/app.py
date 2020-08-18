@@ -8,16 +8,31 @@ sys.path.insert(0, folder)
 
 import pypi_org.data.db_session as db_session
 
-"""
-from infrastructure.view_modifiers import response
-import services.package_service as ps
-"""
 app = flask.Flask(__name__)
 
+"""
+Needed to redefine main() and to define configure()
 def main():
 	register_blueprints()
 	setup_db()
 	app.run(debug=True)
+"""
+
+def main():
+    configure()
+    app.run(debug=True, port=5000)
+
+
+
+def configure():
+    print("Configuring Flask app:")
+
+    register_blueprints()
+    print("Registered blueprints")
+
+    setup_db()
+    print("DB setup completed.")
+    print("", flush=True)
 
 def setup_db():
 	db_file = os.path.join(
@@ -32,26 +47,14 @@ def register_blueprints():
     from pypi_org.views import package_views
     from pypi_org.views import cms_views
     from pypi_org.views import account_views
-
-    app.register_blueprint(package_views.blueprint)
+    from pypi_org.views import seo_view
+    
     app.register_blueprint(home_views.blueprint)
-    app.register_blueprint(account_views.blueprint)
+    app.register_blueprint(package_views.blueprint)
     app.register_blueprint(cms_views.blueprint)
+    app.register_blueprint(account_views.blueprint)
+    app.register_blueprint(seo_view.blueprint)
 
-"""
-@app.route('/')
-@response(template_file='home/index.html')
-def index():
-	test_packages = ps.get_latest_packages()
-	return {'packages':  test_packages}
-	# return flask.render_template('home/index.html', packages=test_packages)
-
-@app.route('/about')
-@response(template_file='home/about.html')
-def about():
-	return {}
-	# return flask.render_template('home/about.html')
-"""
 
 if __name__ == '__main__':
 	main()
