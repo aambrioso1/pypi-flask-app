@@ -3,8 +3,8 @@ Description=uWSGI PyPI server instance
 After=syslog.target
 
 [Service]
-ExecStart=/apps/venv/bin/uwsgi -H /apps/venv --master --processes 4 --threads 2 --http :5000 --manage-script-name --python-path /apps/app_repro/app/pypi-flask-app --mount /=wsgi:app
-RuntimeDirectory=/apps/app_repro/app/pypi-flask-app/
+ExecStart=/apps/venv/bin/uwsgi -H /apps/venv --master --processes 4 --threads 2 --http :5000 --manage-script-name --python-path /apps/pypi-flask-app --mount /=wsgi:app
+RuntimeDirectory=/apps/pypi-flask-app/
 Restart=always
 KillSignal=SIGQUIT
 Type=notify

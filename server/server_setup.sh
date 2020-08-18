@@ -29,7 +29,7 @@ git config --global credential.helper 'cache --timeout=720000'
 
 # Be sure to put your info here:
 git config --global user.email "aambrioso1@gmail.com"
-git config --global user.name ""aambrioso"
+git config --global user.name "aambrioso"
 
 # Web app file structure
 mkdir /apps
@@ -50,7 +50,7 @@ pip install --upgrade uwsgi
 
 # clone the repo:
 cd /apps
-git clone https://github.com/aambrioso1/pypi-flask-app app_repo
+git clone https://github.com/aambrioso1/pypi-flask-app
 
 # Setup the web app:
 cd cd /apps/pypi-flask-app/final/
