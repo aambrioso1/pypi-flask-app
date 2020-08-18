@@ -69,7 +69,7 @@ apt install nginx
 # CAREFUL HERE. If you are using default, maybe skip this
 rm /etc/nginx/sites-enabled/default
 
-cp /apps/app_repo/app/pypi-flask-app/server/pypi.nginx /etc/nginx/sites-enabled/pypi.nginx
+cp /apps/pypi-flask-app/server/pypi.nginx /etc/nginx/sites-enabled/pypi.nginx
 update-rc.d nginx enable
 service nginx restart
 
