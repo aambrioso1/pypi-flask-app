@@ -10,7 +10,7 @@ server {
         gzip_buffers    8 256k;
         uwsgi_buffers   8 256k;
 
-        alias /apps/app_repo/app/ch15_deploy/final/pypi_org/static;
+        alias /apps/app_repo/app/pypi-flask-app/pypi_org/static;
         expires 365d;
     }
     location / {

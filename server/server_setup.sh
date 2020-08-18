@@ -50,14 +50,14 @@ pip install --upgrade uwsgi
 
 # clone the repo:
 cd /apps
-git clone https://github.com/talkpython/data-driven-web-apps-with-flask app_repo
+git clone https://github.com/aambrioso1/pypi-flask-app app_repo
 
 # Setup the web app:
-cd cd /apps/app_repo/app/ch15_deploy/final/
+cd cd /apps/pypi-flask-app/final/
 pip install -r requirements.txt
 
 # Copy and enable the daemon
-cp /apps/app_repo/app/ch15_deploy/final/server/pypi.service /etc/systemd/system/pypi.service
+cp /apps/pypi-flask-app/server/pypi.service /etc/systemd/system/pypi.service
 
 systemctl start pypi
 systemctl status pypi
@@ -69,7 +69,7 @@ apt install nginx
 # CAREFUL HERE. If you are using default, maybe skip this
 rm /etc/nginx/sites-enabled/default
 
-cp /apps/app_repo/app/ch15_deploy/final/server/pypi.nginx /etc/nginx/sites-enabled/pypi.nginx
+cp /apps/app_repo/app/pypi-flask-app/server/pypi.nginx /etc/nginx/sites-enabled/pypi.nginx
 update-rc.d nginx enable
 service nginx restart
 
